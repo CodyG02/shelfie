@@ -14,8 +14,17 @@ class Form extends Component{
         }
         this.handleChange =this.handleChange.bind(this)
         this.resetFunction =this.resetFunction.bind(this)
+        
     }
 
+    newProduct(){
+        this.props.newProductFn(this.state.name, this.state.price, this.state.imgUrl)
+        this.setState({
+            name: '',
+            price: null,
+            imgUrl: ''
+        })
+    }
 
     handleChange(event){
         console.log(this.state)

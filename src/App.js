@@ -14,6 +14,7 @@ class App extends Component{
       inventory:[]
     }
     this.componentDidMount = this.componentDidMount.bind(this)
+    this.newProduct =this.newProduct.bind(this)
   }
 
   componentDidMount(){
@@ -24,6 +25,15 @@ class App extends Component{
     })
   }
 
+  newProduct(){
+        axios.post('/api/product', ).then(res => {
+            this.setState({
+                inventory: res.data,
+                
+            })
+        })
+    }
+
 
   render(){
     return(
@@ -33,7 +43,9 @@ class App extends Component{
         />
         
         <Form
+        newProductFn={this.newProduct}
         newInventory={this.componentDidMount}/>
+        
         <Header/>
       </div>
     )
