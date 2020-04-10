@@ -1,5 +1,5 @@
 const express = require('express')
-const cont = require('./controller')
+const ProductCtrl = require('./controller')
 const massive = require('massive')
 require('dotenv').config()
 
@@ -9,6 +9,10 @@ app.use(express.json())
 
 const {SERVER_PORT, CONNECTION_STRING} =process.env
 
+app.get('/api/products', ProductCtrl.getProducts)
+app.post('/api/products', ProductCtrl.addProduct)
+app.put('/api/products/:id', ProductCtrl.updateProduct)
+app.delete('/api/products/:id', ProductCtrl.deleteProduct)
 
 massive({
     connectionString: CONNECTION_STRING,
