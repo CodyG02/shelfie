@@ -10,7 +10,9 @@ class Product extends Component{
     render(){
         return(
             <div>
-                Product.js
+                {this.props.products.name}
+                {this.props.products.price}
+                {this.props.products.imgUrl}
             </div>
         )
     }

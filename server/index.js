@@ -9,10 +9,10 @@ app.use(express.json())
 
 const {SERVER_PORT, CONNECTION_STRING} =process.env
 
-app.get('/api/products', ProductCtrl.getProducts)
-app.post('/api/products', ProductCtrl.addProduct)
-app.put('/api/products/:id', ProductCtrl.updateProduct)
-app.delete('/api/products/:id', ProductCtrl.deleteProduct)
+app.get('/api/inventory', ProductCtrl.getProducts)
+app.post('/api/product', ProductCtrl.addProduct)
+app.put('/api/product/:id', ProductCtrl.updateProduct)
+app.delete('/api/product/:id', ProductCtrl.deleteProduct)
 
 massive({
     connectionString: CONNECTION_STRING,

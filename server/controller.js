@@ -1,8 +1,10 @@
 module.exports = {
     getProducts: (req, res) => {
         const db = req.app.get('db')
+        
 
-        db.get_all_products().then(products => {
+        db.get_inventory().then(products => {
+            // console.log(products)
             res.status(200).send(products)
         }).catch(err => console.log('getctrl',err)) 
     },
