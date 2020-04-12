@@ -1,5 +1,6 @@
 INSERT INTO products (name, price, img)
-VALUES ($1, $2, $3);
+VALUES ($1, $2, $3)
+returning *;
 
 
 

@@ -3,8 +3,11 @@ const ProductCtrl = require('./controller')
 const massive = require('massive')
 require('dotenv').config()
 
+const cors = require('cors')
+
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 const {SERVER_PORT, CONNECTION_STRING} =process.env
